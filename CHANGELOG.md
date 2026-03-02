@@ -1,7 +1,12 @@
-## [1.0.0]
+# Changelog
+
+## [Unreleased]
 ### Added
-- A black screen feature that locks the IDE every 60 minutes.
-- A 5-minute break timer appears in the center of the screen.
-- A "Skip (Emergency)" button allows you to cancel the lock.
-- A widget in the Status Bar shows the time until the next break.
-- A mechanism to prevent duplicate counters.
+- Added a spinning Java logo on the left side.
+- Added a dancing cat (GIF) on the right side.
+- New break screen layout (Java | Text | Cat).
+- Timer in the Status Bar.
+- "Skip" button on a black screen.
+
+### Fixed
+- Fixed a bug with the timer starting multiple times.

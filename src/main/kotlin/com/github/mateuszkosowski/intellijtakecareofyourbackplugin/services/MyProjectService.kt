@@ -25,8 +25,8 @@ class MyProjectService(private val project: Project) {
     private val secondsPassed = AtomicInteger(0)
     private var isTimerStarted = false
 
-    private val WORK_TIME = 60
-    private val BREAK_TIME = 15
+    private val WORK_TIME = 10
+    private val BREAK_TIME = 10
 
     private var currentStatusText = MyBundle.message("status.waiting")
 
@@ -70,7 +70,11 @@ class MyProjectService(private val project: Project) {
 
         if (currentSeconds > WORK_TIME && currentSeconds <= WORK_TIME + BREAK_TIME) {
             val remainingBreak = (WORK_TIME + BREAK_TIME) - currentSeconds
-            showOverlay(MyBundle.message("overlay.break", remainingBreak))
+            val hours = remainingBreak / 3600
+            val mins = (remainingBreak % 3600) / 60
+            val secs = remainingBreak % 60
+            val formatted = String.format("%02d:%02d:%02d", hours, mins, secs)
+            showOverlay(MyBundle.message("overlay.break", formatted))
         }
 
         else if (currentSeconds > WORK_TIME + BREAK_TIME) {
