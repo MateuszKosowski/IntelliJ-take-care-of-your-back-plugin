@@ -25,8 +25,8 @@ class MyProjectService(private val project: Project) {
     private val secondsPassed = AtomicInteger(0)
     private var isTimerStarted = false
 
-    private val WORK_TIME = 10
-    private val BREAK_TIME = 10
+    private val WORK_TIME = 60 * 60
+    private val BREAK_TIME = 60 * 5
 
     private var currentStatusText = MyBundle.message("status.waiting")
 
